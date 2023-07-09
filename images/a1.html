@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>kiran</title>
+</head>
+<body>
+    <input type="button" value="remove">
+    <input type="button" value="clear">
+    
+    <script>
+        // var arr=["apple","grapes","mangio","banana","pineapple","grapes"];
+        // var arr1=arr.slice(-5,-1)
+        // console.log(arr1)
+
+        // localStorage ::
+
+        var name="raja"
+        localStorage.setItem("Name",name)
+        localStorage.setItem("lastName","Rao")
+        localStorage.setItem("Phone Number",9912863852)
+        var nameFromlocalStorage=localStorage.getItem("Name")
+        var lastnameFromlocalStorage=localStorage.getItem("lastName")
+        var phoneNumberFromlocalStorage=localStorage.getItem("Phone Number")
+        console.log(nameFromlocalStorage)
+        console.log(lastnameFromlocalStorage)
+        console.log(phoneNumberFromlocalStorage)
+
+        var button=document.querySelector("input")
+        button.addEventListener("click",function(){
+            localStorage.removeItem("Phone Number");
+        })
+
+        var button1=document.querySelector("#a");
+        button1.addEventListener("click",function(){
+            localStorage.clear();
+        })
+
+    </script>
+
+    
+</body>
+</html>

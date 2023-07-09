@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+        *{
+            padding:0px;
+            margin:0px;
+            transition: all 0.5s;
+        }
+        #Header{
+            width: 100%;
+            height:80vh;
+           /* background-image:url(./00.jpg); */
+            background-size: 100% 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #left,#right{
+            width:70px;
+            height:70px;
+            font-size: 50px;
+            background-color: transparent;
+            border: none;
+            color: rgb(166, 162, 162);
+            text-shadow: 4px 4px 4px black;
+        }
+        #vid{
+            width:100%;
+            height: 70vh;
+            position: absolute;
+            top:100px;
+            left:0px;
+            z-index: -1;
+
+        }
+        #left{
+            border-right: 3px solid white;
+            box-shadow: 5px 0px 2px rgb(255, 255, 255, 0.509);
+            position: absolute;
+            border-radius: 5px;
+            left:40px;
+        }
+        #right{
+            border-left: 3px solid white;
+            box-shadow: -5px 0px 2px rgb(255, 255, 255, 0.509);
+            position: absolute;
+            border-radius: 5px;
+            right:40px;
+        }
+
+    </style> 
+</head>
+<body>
+    <div id="Header">
+    <button id="left" onclick="left()"> < </button>
+    <button id="right" onclick="rigth()"> > </button>
+    <video id="vid" src="./12.mp4" autoplay muted loop></video>
+    </div>
+    <script>
+        //var imagesArray=["00.jpg","01.jpg","./02.jpg","./04.jpg","./05.jpg","./06.jpg","./07.jpg","./08.jpg","./09.jpg","./10.jpg","./11.jpg"]
+        var arrVid=["./12.mp4","13.mp4","14.mp4","15.mp4","16mp4","17.mp4"]
+        var num=0;
+        function left()
+        {
+            num--;
+            if(num<0)
+            {
+                //num=imagesArray.length-1;
+                //document.getElementById("Header").style.backgroundImage=`url(./${imagesArray[num]})`
+                num=arrVid.length-1;
+                document.getElementById("vid").src=`${arrVid[num]}`;
+            }
+            else
+            {
+                //document.getElementById("Header").style.backgroundImage=`url(./${imagesArray[num]})`
+                document.getElementById("vid").src=`${arrVid[num]}`;
+            }
+           
+        }
+        function rigth()
+        {
+            num++;
+            if(num>arrVid.length-1)
+            {
+                num=0;
+                //document.getElementById("Header").style.backgroundImage=`url(./${imagesArray[num]})`
+                document.getElementById("vid").src=`${arrVid[num]}`;
+            }
+            else
+            {
+                //document.getElementById("Header").style.backgroundImage=`url(./${imagesArray[num]})`
+                document.getElementById("vid").src=`${arrVid[num]}`;
+            }
+            
+        }
+
+
+    </script>
+
+    
+</body>
+</html>
